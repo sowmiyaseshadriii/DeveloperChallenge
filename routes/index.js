@@ -68,7 +68,8 @@ const checkIfFileHasString = async (path, opts = "utf8") =>
 /* GET home page. */
 router.get('/', function(req, res, next) {
    maincheck().then(i=>{
-    res.render('index', { title: i }); 
+    const outputArr = i.map(item => item.split('C:\\Users\\sowmi')[1]);
+    res.render('index', { title: outputArr }); 
   })
 });
 
